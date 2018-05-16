@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- Material conocido-->
+	<!-- Bootstrap -->
+	<meta charset="utf-8", name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<!-- Custom css -->
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title> Find me a home </title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="googleMapContainer"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<FORM name="filtro" method="POST" target="_self">      
+					<P>
+						<INPUT id="onoff" type="checkbox" name="onofffiltro" value="true" checked> activate/deactivate filter<BR>
+					</P>
+				</FORM>
+				<P>Choose a filter to get top 10 districts</P>
+				<FORM name="top10" method="POST" target="_self">      
+					<P>
+						<INPUT id="safety" type="radio" name="metrica" value="1"> Safety<BR>
+						<INPUT id="distance" type="radio" name="metrica" value="2"> Distance to NYU<BR>
+						<INPUT id="affordability" type="radio" name="metrica" value="3"> Affordability<BR><BR>
+						Or... Get top 3 of the best!  
+						<INPUT id="top3" type="radio" name="metrica" value="4"><BR>
+					</P>
+				</FORM>
+			</div>
+			<div class="col-md-3">
+				<div id="tableWrapper">
+					<div id="tableScroll">
+						<table>
+							<thead>
+								<tr>
+									<th colspan="2"> Pick one for extra info: (rows will be clickable)</th>	
+								</tr>
+								<tbody id="top">
+									
+								</tbody>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6" >
+				<svg id="statesChart"> 
+				</svg>
+			</div>
+		</div>
+	</div>
+		<!-- Jquery -->
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+	  <!-- d3.j -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+		<!-- Custom js -->
+	<script type="text/javascript" src="main.js"></script>
+		<!-- Google Map -->
+   <script async defer
+	 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwWYDB9v1MopiTtPpUXMDaCwAlOQbtn3c&callback=onGoogleMapResponse">
+	</script>
+</body>
+</html>
